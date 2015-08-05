@@ -41,7 +41,11 @@
       <HintPath>..\..\log4net.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
+<<<<<<< HEAD
       <HintPath>..\..\nunit.framework.dll</HintPath>
+=======
+      <HintPath>..\..\NUnit-2.6.4\bin\framework\nunit.framework.dll</HintPath>
+>>>>>>> d77a51052f0b6e0831ef612483ca4a2ee6b0f54d
     </Reference>
   </ItemGroup>
   <ItemGroup>
