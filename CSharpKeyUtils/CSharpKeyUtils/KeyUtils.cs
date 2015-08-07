@@ -15,7 +15,7 @@ using Org.BouncyCastle.Math;
 
 using BitCoinSharp;
 
-namespace KeyUtilsProject
+namespace CSharpKeyUtils
 {
 	public class KeyUtils
 	{
@@ -113,7 +113,7 @@ namespace KeyUtilsProject
 
 			string[] keyInfo = keysFromPem (pem);
 			string privKey = keyInfo [2];
-//			Console.WriteLine ("Uncomp PubKey: " + keyInfo[0]);
+			//			Console.WriteLine ("Uncomp PubKey: " + keyInfo[0]);
 
 			BigInteger privKeyNum = new BigInteger(privKey, 16);
 			BitCoinSharp.EcKey keys = new BitCoinSharp.EcKey (privKeyNum);
@@ -125,25 +125,6 @@ namespace KeyUtilsProject
 
 			byte[] signedMsgBytes = keys.Sign (msgHash);
 			string signedMsg = Utils.BytesToHexString (signedMsgBytes);
-
-
-//			Sha256Digest shaDigest = new Sha256Digest ();
-//			shaDigest.BlockUpdate (msgBytes, 0, msgBytes.Length);
-//
-//			byte[] digestBytes = new byte[10];
-//			shaDigest.DoFinal (digestBytes, 3);
-//
-//			byte[] signedMsgBytes = keys.Sign (digestBytes);
-//			string signedMsg = Utils.BytesToHexString (signedMsgBytes);
-
-
-
-//			Sha256Hash msgHash = new Sha256Hash (msgBytes);
-//			int hashCode = msgHash.GetHashCode ();
-//			string hexLength = "X" + msg.Length;
-//			string hexString = hashCode.ToString (hexLength);
-//			byte[] signedMsgBytes = keys.Sign (hexToBytes(hexString));
-//			string signedMsg = Utils.BytesToHexString (signedMsgBytes);
 
 			return signedMsg;
 		}
@@ -205,7 +186,7 @@ namespace KeyUtilsProject
 			string xAndY = uncompPubKey; // removes leading "04"
 			string xVal = xAndY.Substring(0, 64);
 			int endOfY = int.Parse(xAndY.Substring (124), NumberStyles.AllowHexSpecifier);
-						
+
 			string prefix;
 			if (endOfY % 2 == 1) {
 				prefix = "03";
@@ -230,10 +211,10 @@ namespace KeyUtilsProject
 			string str2 = str;
 			if (str2.Length % 2 == 1 && str2.Length < 64)
 				str2 = "0" + str2;
-			
+
 			while (str2.Length > 64 && str2.Substring (0, 2) == "00") 
 				str2 = str2.Substring (2);
-			
+
 			while (str2.Length < 64)
 				str2 = "00" + str2;
 
@@ -264,7 +245,6 @@ namespace KeyUtilsProject
 			return arr;
 		}
 
-		
+
 	}
 }
-

@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using NUnit.Framework;
 using BitCoinSharp;
 
-namespace KeyUtilsProject
+namespace CSharpKeyUtils
 {
 	[TestFixture]
 	public class KeyUtilsTest
@@ -66,7 +66,6 @@ namespace KeyUtilsProject
 		public static void testGeneratePem()
 		{
 			string pemTest = KeyUtils.generatePem ();
-			Console.WriteLine ("Generated Pem 1: \n" + pemTest);
 			Assert.That(Regex.IsMatch(pemTest, pemPattern));
 		}
 
@@ -74,7 +73,6 @@ namespace KeyUtilsProject
 		public static void testCompressedKeyFromPem()
 		{
 			string compPubKey = KeyUtils.getCompressedPubKeyFromPem (pem1);
-			Console.WriteLine ("Comp Pub Key 1: \n" + compPubKey);
 			Assert.AreEqual (pubKeyCompressed1, compPubKey);
 		}
 
@@ -82,7 +80,6 @@ namespace KeyUtilsProject
 		public static void testPrivateKeyFromPem()
 		{
 			string privKey = KeyUtils.getPrivKeyFromPem (pem1);
-			Console.WriteLine ("Private Key 1: \n" + privKey);
 			Assert.AreEqual (privateKey1, privKey);
 		}
 
@@ -90,7 +87,6 @@ namespace KeyUtilsProject
 		public static void testSinFromPem()
 		{
 			string sinTest = KeyUtils.getSinFromPem (pem1);
-			Console.WriteLine ("Sin 1: \n" + sinTest);
 			Assert.AreEqual (sin1, sinTest);
 
 		}
@@ -99,7 +95,6 @@ namespace KeyUtilsProject
 		public static void testSignMessageWithPem()
 		{
 			string signedMsg = KeyUtils.signMsgWithPem (msg1, pem1);
-			Console.WriteLine ("Signature 1: \n" + signedMsg);
 
 			byte[] msgBytes = Encoding.UTF8.GetBytes (msg1);
 			SHA256Managed hashstring = new SHA256Managed();
@@ -120,7 +115,6 @@ namespace KeyUtilsProject
 		public static void testGeneratePem2()
 		{
 			string pemTest2 = KeyUtils.generatePem ();
-			Console.WriteLine ("Generated Pem 2: \n" + pemTest2);
 			Assert.That(Regex.IsMatch(pemTest2, pemPattern));
 		}
 
@@ -128,7 +122,6 @@ namespace KeyUtilsProject
 		public static void testCompressedKeyFromPem2()
 		{
 			string compPubKey2 = KeyUtils.getCompressedPubKeyFromPem (pem2);
-			Console.WriteLine ("Comp Pub Key 2: \n" + compPubKey2);
 			Assert.AreEqual (pubKeyCompressed2, compPubKey2);
 		}
 
@@ -136,7 +129,6 @@ namespace KeyUtilsProject
 		public static void testPrivateKeyFromPem2()
 		{
 			string privKey2 = KeyUtils.getPrivKeyFromPem (pem2);
-			Console.WriteLine ("Private Key 2: \n" + privKey2);
 			Assert.AreEqual (privateKey2, privKey2);
 		}
 
@@ -144,7 +136,6 @@ namespace KeyUtilsProject
 		public static void testSinFromPem2()
 		{
 			string sinTest2 = KeyUtils.getSinFromPem (pem2);
-			Console.WriteLine ("Sin 2: \n" + sinTest2);
 			Assert.AreEqual (sin2, sinTest2);
 
 		}
@@ -153,7 +144,6 @@ namespace KeyUtilsProject
 		public static void testSignMessageWithPem2()
 		{
 			string signedMsg2 = KeyUtils.signMsgWithPem (msg2, pem2);
-			Console.WriteLine ("Signature 2: \n" + signedMsg2);
 
 			byte[] msgBytes2 = Encoding.UTF8.GetBytes (msg2);
 			SHA256Managed hashstring2 = new SHA256Managed();
@@ -174,7 +164,6 @@ namespace KeyUtilsProject
 		public static void testGeneratePem3()
 		{
 			string pemTest3 = KeyUtils.generatePem ();
-			Console.WriteLine ("Generated Pem 3: \n" + pemTest3);
 			Assert.That(Regex.IsMatch(pemTest3, pemPattern));
 		}
 
@@ -182,7 +171,6 @@ namespace KeyUtilsProject
 		public static void testCompressedKeyFromPem3()
 		{
 			string compPubKey3 = KeyUtils.getCompressedPubKeyFromPem (pem3);
-			Console.WriteLine ("Comp Pub Key 3: \n" + compPubKey3);
 			Assert.AreEqual (pubKeyCompressed3, compPubKey3);
 		}
 
@@ -190,7 +178,6 @@ namespace KeyUtilsProject
 		public static void testPrivateKeyFromPem3()
 		{
 			string privKey3 = KeyUtils.getPrivKeyFromPem (pem3);
-			Console.WriteLine ("Private Key 3: \n" + privKey3);
 			Assert.AreEqual (privateKey3, privKey3);
 		}
 
@@ -198,7 +185,6 @@ namespace KeyUtilsProject
 		public static void testSinFromPem3()
 		{
 			string sinTest3 = KeyUtils.getSinFromPem (pem3);
-			Console.WriteLine ("Sin 3: \n" + sin3);
 			Assert.AreEqual (sin3, sinTest3);
 
 		}
@@ -207,7 +193,6 @@ namespace KeyUtilsProject
 		public static void testSignMessageWithPem3()
 		{
 			string signedMsg3 = KeyUtils.signMsgWithPem (msg3, pem3);
-			Console.WriteLine ("Signature 3: \n" + signedMsg3);
 
 			byte[] msgBytes3 = Encoding.UTF8.GetBytes (msg3);
 			SHA256Managed hashstring3 = new SHA256Managed();
@@ -252,4 +237,3 @@ namespace KeyUtilsProject
 
 	}
 }
-
