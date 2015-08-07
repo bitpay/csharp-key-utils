@@ -1,4 +1,4 @@
-# BitPay Key Utilities in C\#
+# BitPay Key Utilities in C#.
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Travis](https://img.shields.io/travis/bitpay/csharp-key-utils.svg?style=flat-square)](https://travis-ci.org/bitpay/csharp-key-utils)
 
