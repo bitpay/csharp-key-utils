@@ -1,2 +1,2 @@
 language: csharp
-solution: CSharpKeyUtils.sln
+solution: /CSharpKeyUtils/CSharpKeyUtils.sln
