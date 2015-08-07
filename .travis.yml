@@ -1,7 +1,9 @@
 language: csharp
 solution: CSharpKeyUtils.sln
 install:
-  - nuget restore CSharpKeyUtils.sln
+  - sudo apt-get install BitCoinSharp.dll
+  - sudo apt-get install BouncyCastle.Crypto.dll
+  - sudo apt-get install nunit.framework.dll
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release CSharpKeyUtils.sln

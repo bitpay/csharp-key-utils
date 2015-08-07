@@ -35,9 +35,6 @@
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>..\..\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\nunit.framework.dll</HintPath>
     </Reference>
